@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Customs · Desk Tickets</title>
+  <style>
+    :root { --pink: #b28a3a; --pink-soft: #9a6c13; --black: #eef4f8; --panel: #fffdf8; --line: #b9cddd; --muted: #526d83; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 50% -10%, #dbeaf2 0, var(--black) 55%); color: #0b2948; font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; }
+    header { padding: 34px 6vw 22px; border-bottom: 4px double var(--line); background: #fffdf8; }
+    .eyebrow { color: var(--pink-soft); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 8px 0 4px; font: 800 clamp(28px, 4vw, 46px) Georgia, serif; letter-spacing: .03em; text-transform: uppercase; }
+    header p { color: var(--muted); margin: 0; }
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; padding: 20px 6vw 0; }
+    button { color: #315b75; background: #fffdf8; border: 1px solid var(--line); border-radius: 2px 2px 0 0; cursor: pointer; padding: 12px 16px; font-weight: 750; }
+    button:hover, button.active { background: #0f4c81; border-color: #0f4c81; color: #fffdf8; }
+    main { padding: 0 6vw 50px; }
+    .tab { display: none; max-width: 1100px; padding-top: 24px; }
+    .tab.active { display: block; }
+    .ticket-head { display: flex; justify-content: space-between; gap: 20px; align-items: start; margin-bottom: 18px; }
+    h2 { margin: 0; font: 800 28px Georgia, serif; letter-spacing: .01em; }
+    h3 { color: var(--pink-soft); margin: 0 0 10px; font-size: 17px; }
+    .badge { border: 1px solid var(--pink); border-radius: 999px; color: var(--pink-soft); padding: 5px 10px; white-space: nowrap; font-size: 12px; font-weight: 800; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { background: #fffdf8; border: 1px solid var(--line); border-radius: 2px; padding: 20px; box-shadow: 0 8px 24px #315b7522; }
+    .card.full { grid-column: 1 / -1; }
+    .card.actual { border-style: dashed; min-height: 180px; background: #f4f8fa; }
+    .card.actual h3 { color: #776270; }
+    .empty { color: #635460; font-style: italic; }
+    dl { display: grid; grid-template-columns: 150px 1fr; gap: 7px 16px; margin: 0; }
+    dt { color: var(--muted); font-weight: 700; } dd { margin: 0; }
+    ul { margin: 8px 0 0; padding-left: 20px; } li { margin: 7px 0; }
+    code { color: #0f4c81; background: #e6f0f7; border: 1px solid #b9cddd; border-radius: 3px; padding: 2px 6px; }
+    .callout { border-left: 3px solid var(--pink); padding: 9px 14px; background: #e6f0f7; color: #315b75; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .card.full { grid-column: auto; } .ticket-head { display: block; } .badge { display: inline-block; margin-top: 10px; } dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 9px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Campus Customs · pre-run operations desk</div>
+    <h1>Ticket plan board</h1>
+    <p>Expected plans are preserved beside verified Actual results, cash reconciliation, and post-run reflection.</p>
+  </header>
+  <nav class="tabs" aria-label="Desk tabs">
+    <button class="active" data-tab="ticket-101">Ticket 101</button>
+    <button data-tab="ticket-102">Ticket 102</button>
+    <button data-tab="ticket-103">Ticket 103</button>
+    <button data-tab="cash">Cash</button>
+    <button data-tab="reflection">Reflection</button>
+  </nav>
+  <main>
+    <section class="tab active" id="ticket-101">
+      <div class="ticket-head"><div><div class="eyebrow">Open ticket · customer order</div><h2>101 · Bulldog tee</h2></div><span class="badge">Expected plan only</span></div>
+      <div class="grid">
+        <article class="card"><h3>Ticket facts</h3><dl><dt>Requester</dt><dd>Tauhid Zaman</dd><dt>Request</dt><dd>1 <code>CC-TEE-WHITE</code>, size <code>S</code></dd><dt>Recorded stock</dt><dd>0 units</dd><dt>Linked invoice</dt><dd>Invoice 501, open, $840 to Bulldog Print Co.</dd></dl></article>
+        <article class="card"><h3>Expected delegation</h3><ol><li><strong>Boss calls Inventory first</strong> to investigate the out-of-stock tee.</li><li><strong>Inventory hands off to Customer Service</strong> after the restocking facts are assembled.</li><li>Customer Service drafts the customer update; it does not send it.</li></ol><div class="callout">One specialist is active at each handoff: Inventory first, then Customer Service. No parallel duplicate specialist assignment is expected.</div></article>
+        <article class="card full"><h3>Expected MCP tools</h3><ul><li><code>get_ticket_restock_and_financial_context(101)</code> — inspect the exact SKU/size shortage, linked invoice/vendor facts, shop date, and cash context.</li><li><code>list_restock_vendor_options("CC-TEE-WHITE", "S")</code> — compare recorded vendor specialties, lead times, and unpaid-invoice blocks before proposing restock.</li><li><code>append_ticket_note(101, ...)</code> — keep Inventory’s findings and Customer Service’s draft on the board; no external message is sent.</li></ul></article>
+        <article class="card full actual"><h3>Actual · run f9810392-015f-4865-aabd-e2a5d2a5d2ab</h3><ul><li><strong>Agents worked:</strong> Boss → Inventory → Customer Service.</li><li><strong>Delegation:</strong> Boss routed ticket 101 to Inventory; Inventory handed the customer update to Customer Service.</li><li><strong>Tools used:</strong> <code>get_ticket_restock_and_financial_context</code>, <code>list_restock_vendor_options</code>.</li><li><strong>Resolution:</strong> Closed after recording the shortage and customer stock-update draft on the ticket board.</li><li><strong>Audit:</strong> Run events were appended to <code>output/audit_trail.json</code>; ticket notes were updated.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="tab" id="ticket-102">
+      <div class="ticket-head"><div><div class="eyebrow">Open ticket · rent notice</div><h2>102 · Rent due</h2></div><span class="badge">Expected plan only</span></div>
+      <div class="grid">
+        <article class="card"><h3>Ticket facts</h3><dl><dt>Requester</dt><dd>Elm City Properties</dd><dt>Linked lease</dt><dd>Lease 1 · Chapel Street shop</dd><dt>Monthly rent</dt><dd>$2,400</dd><dt>Next due</dt><dd>2026-09-02</dd><dt>Shop date</dt><dd>2026-08-31</dd></dl></article>
+        <article class="card"><h3>Expected delegation</h3><ol><li><strong>Boss calls Facilities first</strong> to verify the lease and rent timing.</li><li><strong>Facilities hands off to Accounting</strong> to review payment status and cash feasibility.</li><li>Accounting prepares a payment proposal for human approval; no payment is executed automatically.</li></ol><div class="callout">One specialist is active at each handoff: Facilities first, then Accounting. No parallel duplicate specialist assignment is expected.</div></article>
+        <article class="card full"><h3>Expected MCP tools</h3><ul><li><code>get_lease_rent_context(102)</code> — verify lease 1, the recorded rent amount, due date, and authoritative shop date.</li><li><code>get_ticket_full_context(102)</code> — confirm the ticket’s lease relationship and any linked records actually present.</li><li><code>get_payment_status_context(102)</code> — verify actual payment history and cash-account balances before deciding next steps.</li><li><code>prepare_payment_request("rent", 1, 2400, "checking")</code> — prepare, but not execute, a human approval request after cash and payment status are verified.</li></ul></article>
+        <article class="card full actual"><h3>Actual · run 59faf88e-e15a-4942-81e9-3aa5e4a9b85f</h3><ul><li><strong>Agents worked:</strong> Boss → Facilities → Accounting.</li><li><strong>Delegation:</strong> Boss routed ticket 102 to Facilities; Facilities handed payment review to Accounting.</li><li><strong>Tools used:</strong> <code>get_lease_rent_context</code>, <code>get_ticket_full_context</code>, <code>get_payment_status_context</code>, <code>prepare_payment_request</code>, human-approved payment route.</li><li><strong>Resolution:</strong> Closed after human approval; Payment 1 paid $2,400 rent from checking on 2026-08-31.</li><li><strong>Cash:</strong> Checking decreased from $3,400 to $1,000; no negative balance occurred.</li><li><strong>Audit:</strong> Run events were appended to <code>output/audit_trail.json</code>; ticket notes and <code>payments</code> were updated.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="tab" id="ticket-103">
+      <div class="ticket-head"><div><div class="eyebrow">Open ticket · price override</div><h2>103 · Bulk hoodie discount</h2></div><span class="badge">Expected plan only</span></div>
+      <div class="grid">
+        <article class="card"><h3>Ticket facts</h3><dl><dt>Requester</dt><dd>Yale AI Club</dd><dt>Request</dt><dd>20 <code>CC-HOOD-NAVY</code>, size <code>M</code></dd><dt>Recorded stock</dt><dd>8 units; shortage of 12</dd><dt>Pricing</dt><dd>$22 cost; $58 list price</dd></dl></article>
+        <article class="card"><h3>Expected delegation</h3><ol><li><strong>Boss calls Inventory first</strong> to assess replenishment for the bulk request.</li><li><strong>Inventory hands off to Accounting</strong> to evaluate margins, cash constraints, and the discount/order proposal.</li><li>Accounting makes a recommendation for Boss’s final call; no order or discount is committed without the required approval.</li></ol><div class="callout">One specialist is active at each handoff: Inventory first, then Accounting. No parallel duplicate specialist assignment is expected.</div></article>
+        <article class="card full"><h3>Expected MCP tools</h3><ul><li><code>get_ticket_restock_and_financial_context(103)</code> — calculate the 12-unit shortage, unit margin, shop date, and checking balance.</li><li><code>list_restock_vendor_options("CC-HOOD-NAVY", "M")</code> — compare recorded vendor specialty, lead time, and unpaid-invoice eligibility for replenishment.</li><li><code>prepare_payment_request(...)</code> — only if Accounting develops a purchase proposal; it must remain a human approval request and cannot create negative cash.</li><li><code>append_ticket_note(103, ...)</code> — preserve the financial recommendation and any draft response on the board.</li></ul></article>
+        <article class="card full actual"><h3>Actual · run 0d8d2102-1297-402d-8834-2bc2a3ea61c5</h3><ul><li><strong>Agents worked:</strong> Boss → Inventory → Accounting.</li><li><strong>Delegation:</strong> Boss routed ticket 103 to Inventory; Inventory handed margin and replenishment constraints to Accounting.</li><li><strong>Tools used:</strong> <code>get_ticket_restock_and_financial_context</code>, <code>list_restock_vendor_options</code>.</li><li><strong>Resolution:</strong> Closed after recording shortage, margin, cash, lead-time, and vendor-block facts for Accounting’s recommendation.</li><li><strong>Audit:</strong> Run events were appended to <code>output/audit_trail.json</code>; ticket notes were updated.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="tab" id="cash">
+      <div class="ticket-head"><div><div class="eyebrow">Post-run reconciliation</div><h2>Cash ledger</h2></div><span class="badge">Verified 2026-08-31</span></div>
+      <div class="grid">
+        <article class="card"><h3>Starting balance</h3><p style="font-size:36px;margin:8px 0;color:#0f4c81;font-weight:800;">$3,400.00</p><p>Checking balance immediately after resetting the working database from the untouched original.</p></article>
+        <article class="card"><h3>Ending balance</h3><p style="font-size:36px;margin:8px 0;color:#176b59;font-weight:800;">$1,000.00</p><p>Matches <code>cash_accounts.checking.balance</code> in the working database.</p></article>
+        <article class="card full"><h3>Ticket-by-ticket cash movement</h3><dl><dt>Ticket 101</dt><dd><strong>$0.00 change</strong> — no payment or purchase was executed; the ticket closed after inventory/vendor analysis and a customer draft.</dd><dt>Ticket 102</dt><dd><strong>−$2,400.00</strong> — Payment 1 paid rent for Lease 1 from checking after human approval; paid at the shop date, 2026-08-31.</dd><dt>Ticket 103</dt><dd><strong>$0.00 change</strong> — no purchase order or payment was executed; the ticket closed after inventory, vendor, margin, and cash analysis.</dd></dl></article>
+        <article class="card full"><h3>Math check</h3><p style="font-size:22px;font-weight:800;color:#0f4c81;">$3,400.00 − $2,400.00 = $1,000.00</p><p>The only row in <code>payments</code> is Payment 1: kind <code>rent</code>, ref_id <code>1</code>, amount <code>$2,400.00</code>, account <code>checking</code>. No negative balance occurred.</p></article>
+      </div>
+    </section>
+    <section class="tab" id="reflection">
+      <article class="card full"><h3>Evidence ledger</h3><p>This reflection is grounded in the application artifacts: the Expected and Actual ticket panels, the Cash tab’s $3,400.00 − $2,400.00 = $1,000.00 check, 27 append-only audit events, the resolved-ticket JSON, and the three resolved-board captures. Together they prove that Ticket 102 changed <code>payments</code> and <code>cash_accounts</code> only after approval, while Tickets 101 and 103 closed with $0.00 movement and retained analysis/drafts rather than silently placing orders or contacting outsiders.</p></article>
+      <div class="ticket-head"><div><div class="eyebrow">Problem 10 · post-run analysis</div><h2>Agent-team reflection</h2></div><span class="badge">Evidence-based review</span></div>
+      <div class="grid">
+        <article class="card full"><h3>Overall evaluation</h3><p>The team completed all three assigned runs and closed tickets 101, 102, and 103 without changing the original database. The strongest evidence is the combination of the three Actual sections, the 27 append-only events in <code>output/audit_trail.json</code>, and the Cash tab’s exact reconciliation from $3,400.00 to $1,000.00. Boss made the expected first routing decision on every ticket; the specialists then handed work to the next appropriate specialist instead of duplicating effort. The main limitation is that “closed” means the operational ticket was resolved with a documented decision: Ticket 101 and Ticket 103 did not execute a restock, purchase order, or external message, so their resolution was an evidence-backed recommendation and draft rather than a completed vendor transaction.</p></article>
+        <article class="card"><h3>Ticket 101 · performance</h3><p><strong>Expected versus actual:</strong> The plan called for Boss → Inventory → Customer Service. That exact sequence occurred in run <code>f9810392-015f-4865-aabd-e2a5d2a5d2ab</code>. Inventory used <code>get_ticket_restock_and_financial_context</code> for the specific <code>CC-TEE-WHITE</code>, size S shortage and then <code>list_restock_vendor_options</code> to evaluate recorded vendor choices. Customer Service received the findings and left a customer update as a draft, consistent with the no-contact rule.</p><p><strong>Evidence and judgment:</strong> The Ticket 101 tab records zero stock, Invoice 501 open for $840 to Bulldog Print Co., and a one-unit request from Tauhid Zaman. The Actual section confirms those two context tools, the delegation handoff, and a closed status. This was effective because the team did not invent a supplier or promise availability; it preserved a truthful customer-facing draft while keeping cash unchanged at $3,400 during this run.</p></article>
+        <article class="card"><h3>Ticket 102 · performance</h3><p><strong>Expected versus actual:</strong> The expected path was Boss → Facilities → Accounting, followed by a prepared payment and human approval. The actual run <code>59faf88e-e15a-4942-81e9-3aa5e4a9b85f</code> followed that path and added the necessary payment-status check before preparing the request. Facilities verified Lease 1 for the Chapel Street shop, $2,400 rent, and the 2026-09-02 due date using lease/full-context tools; Accounting checked payment and cash state, prepared the request, and waited for approval.</p><p><strong>Evidence and judgment:</strong> Payment 1 was only executed after the human approval route. The Cash tab proves the controlled outcome: $3,400.00 − $2,400.00 = $1,000.00, matching <code>cash_accounts.checking.balance</code>; no negative balance occurred. This is the strongest team performance because it connected domain verification, financial feasibility, an approval gate, a database payment update, and an auditable close.</p></article>
+        <article class="card"><h3>Ticket 103 · performance</h3><p><strong>Expected versus actual:</strong> The expected path was Boss → Inventory → Accounting. The actual run <code>0d8d2102-1297-402d-8834-2bc2a3ea61c5</code> used that same sequence. Inventory analyzed the Yale AI Club request for 20 <code>CC-HOOD-NAVY</code>, size M, where the Ticket 103 tab records 8 units on hand and a shortage of 12; it also checked vendor options. Accounting received the margin and cash constraints.</p><p><strong>Evidence and judgment:</strong> The tab records $22 cost and $58 list price, so the team had a concrete margin basis rather than a generic “check pricing” instruction. The Actual section shows that no purchase or discount was committed, and the Cash tab shows $0.00 movement for Ticket 103. That restraint was correct under the approval and no-negative-cash rules, although a stronger future version would expose Accounting’s final recommendation and an explicit approval request if a purchase were actually proposed.</p></article>
+        <article class="card full"><h3>What would have been simpler with one tool-using agent?</h3><p>A single agent with all MCP tools could have completed these three short workflows with fewer handoffs and fewer audit events. For Ticket 101, one agent could read the ticket, call both restock tools, and write the customer draft; for Ticket 102, it could read the lease, check cash/payment status, prepare the $2,400 request, and pause at approval; for Ticket 103, it could inspect the 12-unit shortage, vendors, margin, and cash in one loop. That would reduce routing overhead and make a small queue faster.</p><p>However, the multi-agent design created useful separation of duties that the one-agent version would weaken. In Ticket 102, Facilities interpreted lease facts while Accounting handled money, and the human approval gate remained visible. In Tickets 101 and 103, Inventory owned SKU/size and vendor reasoning while Customer Service or Accounting received a focused handoff. The three Actual sections and audit trail make those boundaries inspectable. Therefore one agent is simpler for low-volume, low-risk work, but the current team is safer and more teachable for rent, purchasing, customer communication, and future scale.</p></article>
+        <article class="card"><h3>Three future problems the team can solve</h3><ol><li><strong>Another out-of-stock size:</strong> Inventory can use the same restock context and vendor-option tools demonstrated by Ticket 101’s exact SKU/size investigation; Customer Service can keep the availability message as a draft.</li><li><strong>A later rent or lease discrepancy:</strong> Facilities can compare the lease and due-date facts like Ticket 102, while Accounting checks payment history, cash, and prepares an approval-gated payment or escalation.</li><li><strong>A larger club order with a discount request:</strong> Inventory can quantify shortage and lead time as in Ticket 103; Accounting can evaluate cost, list price, margin, cash, and a purchase proposal before any human-approved commitment.</li></ol><p>These are not hypothetical capabilities detached from the app: each directly reuses an agent handoff, an MCP context query, an append-only audit event, and a board tab pattern already exercised in the three runs.</p></article>
+        <article class="card"><h3>Three problems the current team cannot solve alone</h3><ol><li><strong>Actual customer or vendor communication:</strong> The team can draft Ticket 101’s update, but it cannot safely verify tone, consent, delivery address, or send an email/call. Customer Service plus a human communications workflow would help; the current draft-only guardrail must remain.</li><li><strong>Physical inventory truth:</strong> The team can reason from recorded counts like Ticket 103’s 8 hoodies and 12-unit shortage, but it cannot count a shelf, inspect defects, or confirm a shipment. Inventory plus a barcode/warehouse tool and a human physical check would be required.</li><li><strong>Unusual financial/legal disputes:</strong> Accounting can handle the structured $2,400 rent payment in Ticket 102, but it cannot independently negotiate a lease, resolve a disputed invoice, authorize a new bank account, or provide legal advice. Accounting, Facilities, a richer document/approval tool, and human finance/legal review would be needed.</li></ol><p>The limitation is deliberate: the current MCP server exposes recorded database facts and controlled payment preparation, not broad external access. Expanding tools without those additional humans, permissions, and evidence checks would undermine the approval, no-negative-balance, no-contact, and audit requirements visible in the Cash and Actual tabs.</p></article>
+        <article class="card full"><h3>Final reflection</h3><p>The clearest success is controlled coordination: every Boss decision matched the pre-run plan, every specialist contributed a ticket-specific function, drafts stayed on the board, and only the approved rent payment changed cash. The clearest improvement is richer completion semantics for inventory and bulk-order tickets: Ticket 101 and Ticket 103 are closed operationally, but future runs should make the recommendation, approval state, and any blocked vendor action even more explicit before marking them resolved. The dashboard, desk tabs, Cash tab, resolved JSON, screenshots, and append-only audit trail together make that distinction reviewable rather than hiding it behind a generic “done.”</p></article>
+      </div>
+    </section>
+  </main>
+  <script>
+    const buttons = document.querySelectorAll('[data-tab]');
+    const tabs = document.querySelectorAll('.tab');
+    buttons.forEach(button => button.addEventListener('click', () => {
+      buttons.forEach(item => item.classList.toggle('active', item === button));
+      tabs.forEach(tab => tab.classList.toggle('active', tab.id === button.dataset.tab));
+    }));
+  </script>
+</body>
+</html>

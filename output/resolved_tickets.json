@@ -1,0 +1,54 @@
+{
+  "starting_checking_balance": 3400.0,
+  "ending_checking_balance": 1000.0,
+  "tickets": [
+    {
+      "id": 101,
+      "final_status": "closed",
+      "short_outcome": "Inventory confirmed a one-unit size-S tee shortage, reviewed restocking eligibility, and Customer Service recorded a customer stock-update draft.",
+      "agents": {
+        "boss": "Read ticket 101 and delegated first to Inventory.",
+        "inventory": "Checked SKU/size shortage and vendor restock options.",
+        "customer_service": "Prepared the customer update draft; no message was sent.",
+        "accounting": "No action required.",
+        "facilities": "No action required."
+      },
+      "tools_used": ["get_ticket_restock_and_financial_context", "list_restock_vendor_options"],
+      "human_approvals_needed": [],
+      "cash_change": 0.0,
+      "run_id": "f9810392-015f-4865-aabd-e2a5d2a5d2ab"
+    },
+    {
+      "id": 102,
+      "final_status": "closed",
+      "short_outcome": "Facilities verified Lease 1 and Accounting prepared and executed the approved $2,400 rent payment from checking.",
+      "agents": {
+        "boss": "Read ticket 102 and delegated first to Facilities.",
+        "facilities": "Verified lease terms and the 2026-09-02 due date using the shop date.",
+        "accounting": "Checked payment history and cash, prepared the proposal, and executed it after human approval.",
+        "inventory": "No action required.",
+        "customer_service": "No action required."
+      },
+      "tools_used": ["get_lease_rent_context", "get_ticket_full_context", "get_payment_status_context", "prepare_payment_request", "POST /payments/approve"],
+      "human_approvals_needed": [{"approved_by": "human user", "kind": "rent", "ref_id": 1, "amount": 2400.0, "payment_id": 1}],
+      "cash_change": -2400.0,
+      "run_id": "59faf88e-e15a-4942-81e9-3aa5e4a9b85f"
+    },
+    {
+      "id": 103,
+      "final_status": "closed",
+      "short_outcome": "Inventory confirmed a 12-unit size-M hoodie shortage and supplied vendor, margin, lead-time, and cash constraints to Accounting for the bulk decision.",
+      "agents": {
+        "boss": "Read ticket 103 and delegated first to Inventory.",
+        "inventory": "Checked hoodie shortage and vendor restock options.",
+        "accounting": "Reviewed margin and financial constraints for the bulk request.",
+        "facilities": "No action required.",
+        "customer_service": "No action required."
+      },
+      "tools_used": ["get_ticket_restock_and_financial_context", "list_restock_vendor_options"],
+      "human_approvals_needed": [],
+      "cash_change": 0.0,
+      "run_id": "0d8d2102-1297-402d-8834-2bc2a3ea61c5"
+    }
+  ]
+}

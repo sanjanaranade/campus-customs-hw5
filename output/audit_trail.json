@@ -1,0 +1,655 @@
+[
+  {
+    "event_id": "fe1a3054-cd3e-41c5-9612-199deed0b81d",
+    "timestamp": "2026-10-15T01:59:00.463863Z",
+    "run_id": "0e1c2a70-b06e-440a-ab5f-2e1ac99af317",
+    "step": 1,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 101,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "customer_order"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "946707c7-754c-48e5-91ba-d6bd302b26bb",
+    "timestamp": "2026-10-15T01:59:00.464622Z",
+    "run_id": "0e1c2a70-b06e-440a-ab5f-2e1ac99af317",
+    "step": 2,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 101,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "customer_order"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "inventory",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "bfcebfdb-326e-43e9-8767-ff8061d33e9d",
+    "timestamp": "2026-10-15T01:59:00.464732Z",
+    "run_id": "0e1c2a70-b06e-440a-ab5f-2e1ac99af317",
+    "step": 3,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 102,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "rent_notice"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "e61231fa-516e-4946-9e2a-f411a366027b",
+    "timestamp": "2026-10-15T01:59:00.464820Z",
+    "run_id": "0e1c2a70-b06e-440a-ab5f-2e1ac99af317",
+    "step": 4,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 102,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "rent_notice"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "facilities",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "d23876d0-3677-4e42-9dfb-10b4558282db",
+    "timestamp": "2026-10-15T01:59:00.464897Z",
+    "run_id": "0e1c2a70-b06e-440a-ab5f-2e1ac99af317",
+    "step": 5,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 103,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "price_override"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "1a71760e-c079-4493-a429-37b858d85f49",
+    "timestamp": "2026-10-15T01:59:00.464993Z",
+    "run_id": "0e1c2a70-b06e-440a-ab5f-2e1ac99af317",
+    "step": 6,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 103,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "price_override"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "inventory",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "2cc497a6-22c2-4b70-9d78-fd7182d753b9",
+    "timestamp": "2026-10-15T02:35:38.607879Z",
+    "run_id": "53692498-336f-41df-b52d-6516000ea3bf",
+    "step": 1,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 101,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "customer_order"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "37c9c491-d6a8-4116-a655-269c39c542eb",
+    "timestamp": "2026-10-15T02:35:38.612832Z",
+    "run_id": "53692498-336f-41df-b52d-6516000ea3bf",
+    "step": 2,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 101,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "customer_order"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "inventory",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "b05de92a-a9bd-4a4f-9baf-36d1923eb141",
+    "timestamp": "2026-10-15T02:49:32.250360Z",
+    "run_id": "ae17feaa-4e6a-4c53-ba69-30f39c12c7b0",
+    "step": 1,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 101,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "customer_order"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "1f8d0973-a223-4511-811d-178abee1ce23",
+    "timestamp": "2026-10-15T02:49:32.253505Z",
+    "run_id": "ae17feaa-4e6a-4c53-ba69-30f39c12c7b0",
+    "step": 2,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 101,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "customer_order"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "inventory",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "ef6dc712-df81-4d65-bd09-64821bfb7e60",
+    "timestamp": "2026-10-15T02:49:32.263772Z",
+    "run_id": "d757f0b9-28c5-4b28-b11d-1083ef308e26",
+    "step": 1,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 102,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "rent_notice"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "e6f4c928-a6bc-415c-b1cf-0800fd339559",
+    "timestamp": "2026-10-15T02:49:32.264446Z",
+    "run_id": "d757f0b9-28c5-4b28-b11d-1083ef308e26",
+    "step": 2,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 102,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "rent_notice"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "facilities",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "45934c80-89a3-48a8-95a4-f3892d221b89",
+    "timestamp": "2026-10-15T02:49:32.272979Z",
+    "run_id": "9a6cc637-e8e0-4ca8-975b-4b9fbfa5b3f0",
+    "step": 1,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 103,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "price_override"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "dbf79cb6-16e0-4e24-81b6-6cc787680cde",
+    "timestamp": "2026-10-15T02:49:32.273229Z",
+    "run_id": "9a6cc637-e8e0-4ca8-975b-4b9fbfa5b3f0",
+    "step": 2,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 103,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "price_override"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "inventory",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "a56f16e9-4c2a-4570-857c-78fb3eeded5c",
+    "timestamp": "2026-10-15T02:51:22.894064Z",
+    "run_id": "f9810392-015f-4865-aabd-e2a5d2a5d2ab",
+    "step": 1,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 101,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "customer_order"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "7af031bb-4a53-4a82-bd83-6232e3439432",
+    "timestamp": "2026-10-15T02:51:22.894560Z",
+    "run_id": "f9810392-015f-4865-aabd-e2a5d2a5d2ab",
+    "step": 2,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 101,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "customer_order"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "inventory",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "342349f6-5f48-441b-928e-51d777652a19",
+    "timestamp": "2026-10-15T02:51:23.180488Z",
+    "run_id": "f9810392-015f-4865-aabd-e2a5d2a5d2ab",
+    "step": 3,
+    "event_type": "agent_step",
+    "agent": "inventory",
+    "ticket_id": 101,
+    "action": "used_mcp_tools",
+    "input_summary": {
+      "tools": [
+        "get_ticket_restock_and_financial_context",
+        "list_restock_vendor_options"
+      ]
+    },
+    "output_summary": {
+      "tool_outputs_recorded": true
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "b26c018b-3a19-47f3-90db-6b16013d232f",
+    "timestamp": "2026-10-15T02:51:23.180930Z",
+    "run_id": "f9810392-015f-4865-aabd-e2a5d2a5d2ab",
+    "step": 4,
+    "event_type": "agent_step",
+    "agent": "inventory",
+    "ticket_id": 101,
+    "action": "delegate_specialist_handoff",
+    "input_summary": {
+      "completed_tools": [
+        "get_ticket_restock_and_financial_context",
+        "list_restock_vendor_options"
+      ]
+    },
+    "output_summary": {
+      "next_step": "Inventory found shortage 1 and reviewed vendor eligibility; Customer Service drafted a stock-update message."
+    },
+    "delegated_to": "customer_service",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "aa0db894-ca95-4086-ba29-1285d4653b35",
+    "timestamp": "2026-10-15T02:51:23.188551Z",
+    "run_id": "59faf88e-e15a-4942-81e9-3aa5e4a9b85f",
+    "step": 1,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 102,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "rent_notice"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "a933c5fa-5d15-4d87-8c15-65c216f58839",
+    "timestamp": "2026-10-15T02:51:23.188758Z",
+    "run_id": "59faf88e-e15a-4942-81e9-3aa5e4a9b85f",
+    "step": 2,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 102,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "rent_notice"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "facilities",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "75df8e23-a68b-4687-89b3-79ce8d90560f",
+    "timestamp": "2026-10-15T02:51:23.189387Z",
+    "run_id": "59faf88e-e15a-4942-81e9-3aa5e4a9b85f",
+    "step": 3,
+    "event_type": "agent_step",
+    "agent": "facilities",
+    "ticket_id": 102,
+    "action": "used_mcp_tools",
+    "input_summary": {
+      "tools": [
+        "get_lease_rent_context",
+        "get_ticket_full_context",
+        "get_payment_status_context",
+        "prepare_payment_request"
+      ]
+    },
+    "output_summary": {
+      "tool_outputs_recorded": true
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "b2a02805-4ac0-4a89-a9a2-fd76ef072819",
+    "timestamp": "2026-10-15T02:51:23.189716Z",
+    "run_id": "59faf88e-e15a-4942-81e9-3aa5e4a9b85f",
+    "step": 4,
+    "event_type": "agent_step",
+    "agent": "facilities",
+    "ticket_id": 102,
+    "action": "delegate_specialist_handoff",
+    "input_summary": {
+      "completed_tools": [
+        "get_lease_rent_context",
+        "get_ticket_full_context",
+        "get_payment_status_context",
+        "prepare_payment_request"
+      ]
+    },
+    "output_summary": {
+      "next_step": "Facilities verified the lease and due date; Accounting prepared a rent payment proposal pending human approval."
+    },
+    "delegated_to": "accounting",
+    "requires_human_approval": true
+  },
+  {
+    "event_id": "fd9d6aec-6846-4992-bafd-e704f2014635",
+    "timestamp": "2026-10-15T02:51:23.197239Z",
+    "run_id": "0d8d2102-1297-402d-8834-2bc2a3ea61c5",
+    "step": 1,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 103,
+    "action": "read_ticket_for_triage",
+    "input_summary": {
+      "ticket_fields": [
+        "created_at",
+        "id",
+        "invoice_id",
+        "lease_id",
+        "notes",
+        "qty",
+        "requester",
+        "size",
+        "sku",
+        "status",
+        "subject",
+        "type"
+      ]
+    },
+    "output_summary": {
+      "status": "open",
+      "type": "price_override"
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "b0615fc9-8a57-4068-9e35-a44bd11c2d86",
+    "timestamp": "2026-10-15T02:51:23.197637Z",
+    "run_id": "0d8d2102-1297-402d-8834-2bc2a3ea61c5",
+    "step": 2,
+    "event_type": "agent_step",
+    "agent": "boss",
+    "ticket_id": 103,
+    "action": "delegate_ticket",
+    "input_summary": {
+      "ticket_type": "price_override"
+    },
+    "output_summary": {
+      "delegation_created": true
+    },
+    "delegated_to": "inventory",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "4759b77d-03de-42d8-aff1-7b055337ed93",
+    "timestamp": "2026-10-15T02:51:23.198118Z",
+    "run_id": "0d8d2102-1297-402d-8834-2bc2a3ea61c5",
+    "step": 3,
+    "event_type": "agent_step",
+    "agent": "inventory",
+    "ticket_id": 103,
+    "action": "used_mcp_tools",
+    "input_summary": {
+      "tools": [
+        "get_ticket_restock_and_financial_context",
+        "list_restock_vendor_options"
+      ]
+    },
+    "output_summary": {
+      "tool_outputs_recorded": true
+    },
+    "delegated_to": null,
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "5562ce31-d6cf-4c8b-ae35-3aad2f64f701",
+    "timestamp": "2026-10-15T02:51:23.198531Z",
+    "run_id": "0d8d2102-1297-402d-8834-2bc2a3ea61c5",
+    "step": 4,
+    "event_type": "agent_step",
+    "agent": "inventory",
+    "ticket_id": 103,
+    "action": "delegate_specialist_handoff",
+    "input_summary": {
+      "completed_tools": [
+        "get_ticket_restock_and_financial_context",
+        "list_restock_vendor_options"
+      ]
+    },
+    "output_summary": {
+      "next_step": "Inventory found shortage 12 and supplied margin, cash, lead-time, and vendor-block facts to Accounting."
+    },
+    "delegated_to": "accounting",
+    "requires_human_approval": false
+  },
+  {
+    "event_id": "60b9fa7f-8d7c-45f7-878a-873c31abf875",
+    "timestamp": "2026-10-15T02:57:11.750427Z",
+    "run_id": "59faf88e-e15a-4942-81e9-3aa5e4a9b85f",
+    "step": 5,
+    "event_type": "human_approval",
+    "agent": "accounting",
+    "ticket_id": 102,
+    "action": "execute_approved_rent_payment",
+    "input_summary": {
+      "kind": "rent",
+      "ref_id": 1,
+      "amount": 2400.0,
+      "account": "checking"
+    },
+    "output_summary": {
+      "payment_id": 1,
+      "balance_after": 1000.0,
+      "approved_by": "human user"
+    },
+    "delegated_to": null,
+    "requires_human_approval": true
+  }
+]
