@@ -343,3 +343,33 @@
 > aweosme here are the steps we will now push the code to a public github repository so that the ppl grading me will be able to clone it! i need the repo url that i will be able to submit. please also put it within output/github_url.txt ok?make sure to NOT push my real .env to the github repo and make sure to YES include both databases under data/ (both og and the 'new' working copy) so graders can run the app. please follow the following file tree layout. note that README needs to fully explain tht the user must copy the original DB to the working DB when needing a clean run, start mcp server, start FastAPI backend, start react board, reset the db before a full 3 ticket run. [requested file tree follows]
 
 **Why this follow-up was needed:** This authorizes the public GitHub submission and specifies the required repository contents, secret exclusion, database inclusion, README runbook, repository URL artifact, and grader-facing file layout.
+
+### Follow-up Prompt 5
+
+> can u confirm the file tree and confirm accuracy and confirm the log and everything please
+
+**Why this follow-up was needed:** This requests a read-only quality audit of the submission tree, evidence, database files, Git state, and prompt log before public submission.
+
+### Follow-up Prompt 6
+
+> structure the filetree for me how u have it so i can ensure
+
+**Why this follow-up was needed:** This asks for a clear representation of the current repository structure so the user can verify the submission contents before pushing.
+
+### Follow-up Prompt 7
+
+> ehh i actually want hw5/ within that AI_prompts.md, requirements.txt, .env.example, .gitignore, .mcp.json, README.md, data/ (within that i want campus_customs.db and campus_customs_new.db), mcp_server/ (within that i want server.py and README.md), frontend/, backend/ (within that i want main.py, models.py, prompts/ [within that i want boss.md, inventory.md, accounting.md, facilities.md, customer_service.md]), and output/ (within that i want harness.md, mcp_smoke.json, desk_tickets.html, design.md, resolved_tickets.json, resolved_board.html, audit_trail.json, and github_url.text)
+
+**Why this follow-up was needed:** This corrects the required package root and specifies the exact grader-facing nested structure, including the lowercase `hw5/` folder and URL artifact.
+
+### Follow-up Prompt 8
+
+> ok thank u . give me steps for how to do the github thing so i can complete #11
+
+**Why this follow-up was needed:** This requests practical instructions for creating the public repository, pushing the prepared local commit, recording the repository URL, and completing Problem 11.
+
+### Follow-up Prompt 9
+
+> wait i did step 1 and 2. can u do whats after that for me
+
+**Why this follow-up was needed:** This authorizes me to perform the local staging, commit, remote setup, push, and URL-recording steps after the user created the public GitHub repository.
