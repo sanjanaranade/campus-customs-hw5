@@ -373,3 +373,9 @@
 > wait i did step 1 and 2. can u do whats after that for me
 
 **Why this follow-up was needed:** This authorizes me to perform the local staging, commit, remote setup, push, and URL-recording steps after the user created the public GitHub repository.
+
+### Follow-up Prompt 10
+
+> is this what u r looking for [https://github.com/sanjanaranade/campus-customs-hw5.git](https://github.com/sanjanaranade/campus-customs-hw5.git)
+
+**Why this follow-up was needed:** This supplies the exact public GitHub HTTPS remote required to complete the Problem 11 push.
