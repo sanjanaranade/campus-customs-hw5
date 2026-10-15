@@ -22,7 +22,7 @@ from backend.models import TeamRunLimits
 from backend.team_loop import run_team
 
 
-ORIGINAL_DATABASE = Path("/Users/sanjanaranade/Downloads/data-5/campus_customs.db")
+ORIGINAL_DATABASE = PROJECT_DIR / "data" / "campus_customs.db"
 
 app = FastAPI(title="Campus Customs Operations API", version="1.0.0")
 app.add_middleware(

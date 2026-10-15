@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
-load_dotenv(PROJECT_DIR.parent / ".env")
+load_dotenv(PROJECT_DIR / ".env")
 DATABASE_PATH = Path(
     os.getenv("CAMPUS_CUSTOMS_DB", str(PROJECT_DIR / "data" / "campus_customs_new.db"))
 )

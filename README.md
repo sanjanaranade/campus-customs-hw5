@@ -33,7 +33,7 @@ cd backend && uvicorn main:app --reload --port 8000
 cd frontend && npm run dev
 ```
 
-Open `http://localhost:5173`; the backend is at `http://localhost:8000`. The backend allows the Vite origin and the agents use the local MCP tools. Use the model configured in `.env` (`gpt-5.6-luna`) through Portkey.
+Open `http://localhost:5173`; the backend is at `http://localhost:8000`. The backend allows the Vite origin and the agents use the local MCP tools. Use only `gpt-6-luna` through Portkey, as configured in `.env`.
 
 ## Safety and grading notes
 
